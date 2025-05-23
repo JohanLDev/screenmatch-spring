@@ -19,9 +19,12 @@ public class ScreenmatchspringApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		var consumoAPI = new ConsumoAPI();
+
+		// API a consumir
 		var url = "https://www.omdbapi.com/?t=game+of+thrones&apikey=cb12e773";
 		var jsonResponse = consumoAPI.obtenerDatos(url);
 
+		// Crear nuestro objeto
 		ConvierteDatos convierteDatos = new ConvierteDatos();
 
 		var datos = convierteDatos.obtenerDatos(jsonResponse, DatosSerie.class);
