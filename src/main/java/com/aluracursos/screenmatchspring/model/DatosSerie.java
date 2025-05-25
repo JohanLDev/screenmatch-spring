@@ -8,6 +8,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public record DatosSerie(@JsonAlias("Title") String titulo, // Json Alias sirve solo para leer, a diferencia de property
                          @JsonAlias("Runtime") String duracion,
                          @JsonAlias("Director") String director,
-                         @JsonAlias("totalSeasons") String totalDeTemporadas,
+                         @JsonAlias("totalSeasons") Integer totalDeTemporadas,
                          @JsonAlias("imdbRating") String evaluacion) {
 }

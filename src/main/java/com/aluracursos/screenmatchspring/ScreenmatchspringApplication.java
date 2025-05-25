@@ -1,11 +1,17 @@
 package com.aluracursos.screenmatchspring;
 
+import com.aluracursos.screenmatchspring.model.DatosEpisodio;
 import com.aluracursos.screenmatchspring.model.DatosSerie;
+import com.aluracursos.screenmatchspring.model.DatosTemporadas;
+import com.aluracursos.screenmatchspring.principal.Principal;
 import com.aluracursos.screenmatchspring.service.ConsumoAPI;
 import com.aluracursos.screenmatchspring.service.ConvierteDatos;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class ScreenmatchspringApplication implements CommandLineRunner {
@@ -17,19 +23,7 @@ public class ScreenmatchspringApplication implements CommandLineRunner {
 	// Implementar CommanLineRunner nos permite ejecutar acciones antes que inicie la aplicacion en SI.
 	@Override
 	public void run(String... args) throws Exception {
-
-		var consumoAPI = new ConsumoAPI();
-
-		// API a consumir
-		var url = "https://www.omdbapi.com/?t=game+of+thrones&apikey=cb12e773";
-		var jsonResponse = consumoAPI.obtenerDatos(url);
-
-		// Crear nuestro objeto
-		ConvierteDatos convierteDatos = new ConvierteDatos();
-
-		var datos = convierteDatos.obtenerDatos(jsonResponse, DatosSerie.class);
-
-		System.out.println(datos);
-
+		Principal principal = new Principal();
+		principal.mostrarMenu();
 	}
 }
