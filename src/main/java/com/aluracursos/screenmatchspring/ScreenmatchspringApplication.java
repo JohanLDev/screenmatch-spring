@@ -3,6 +3,7 @@ package com.aluracursos.screenmatchspring;
 import com.aluracursos.screenmatchspring.model.DatosEpisodio;
 import com.aluracursos.screenmatchspring.model.DatosSerie;
 import com.aluracursos.screenmatchspring.model.DatosTemporadas;
+import com.aluracursos.screenmatchspring.principal.EjemploStreams;
 import com.aluracursos.screenmatchspring.principal.Principal;
 import com.aluracursos.screenmatchspring.service.ConsumoAPI;
 import com.aluracursos.screenmatchspring.service.ConvierteDatos;
@@ -25,5 +26,11 @@ public class ScreenmatchspringApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		Principal principal = new Principal();
 		principal.mostrarMenu();
+
+
+//		EjemploStreams ejemploStreams = new EjemploStreams();
+//		ejemploStreams.muestraEjemplo();
+
+
 	}
 }
